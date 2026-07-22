@@ -83,27 +83,27 @@ body{
 
 }
 
-button{
+.btn{
+
+    display:inline-block;
+
+    text-decoration:none;
 
     background:#C8A97E;
 
     color:white;
 
-    border:none;
-
     padding:18px 40px;
 
     border-radius:50px;
 
-    font-size:18px;
-
-    cursor:pointer;
-
     transition:.35s;
+
+    font-size:18px;
 
 }
 
-button:hover{
+.btn:hover{
 
     transform:translateY(-3px);
 
@@ -112,6 +112,7 @@ button:hover{
     box-shadow:0 15px 30px rgba(0,0,0,.12);
 
 }
+
 .letter{
 
     background:white;
