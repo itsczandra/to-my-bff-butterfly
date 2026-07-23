@@ -179,10 +179,31 @@ height:auto;
 }
 
 }
+/* ==========================
+   SCROLL REVEAL
+========================== */
+
+.reveal{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:all 1s ease;
+
+}
+
+.reveal.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
 </style>
 </head>
 <body>
-<section class="hero">
+<section class="hero reveal">
 <div class="container">
 <h1>To My Kambal Tuko 🌻</h1>
 <p class="subtitle">
@@ -194,7 +215,7 @@ wherever life takes you.
 </div>
 </section>
 
-<section id="letter">
+<section id="letter" class="reveal">
 <div class="container">
 <div class="card">
 <h2>Hi, Butterfly KT. 🦋</h2>
@@ -238,14 +259,14 @@ wherever life takes you.
 </div>
 </section>
 
- <section class="gallery">
+<section class="gallery reveal">
 
 <div class="gallery-title">
 <h2>Twenty-Four Years of Memories & Counting...</h2>
 <p>Every picture tells a story.</p>
 </div>
 
-<div class="memory">
+<div class="memory reveal">
 
 <img src="assets/images/kinder.png">
 
@@ -263,7 +284,7 @@ they were about to become sisters by heart.
 
 </div>
 
-<div class="memory reverse">
+<div class="memory reverse reveal">
 
 <img src="assets/images/elementary.jpg">
 
@@ -281,7 +302,7 @@ I'm so grateful I had you. 🥹🥂
 
 </div>
 
-<div class="memory">
+<div class="memory reveal">
 
 <img src="assets/images/highschool.jpg">
 
@@ -299,7 +320,7 @@ But somehow,we always find our way back to each other.
 
 </div>
 
-<div class="memory reverse">
+<div class="memory reverse reveal">
 
 <img src="assets/images/inom era.jpeg">
 
@@ -317,7 +338,7 @@ Just look at the photo to see how wild this era was! Cheers to surviving every s
 
 </div>
 
-<div class="memory">
+<div class="memory reveal">
 
 <img src="assets/images/passenger princess.jpeg">
 
@@ -336,7 +357,7 @@ Thank you for making every road trip feel like a core memory.
 
 </div>
 
-<div class="memory reverse">
+<div class="memory reverse reveal">
 
 <img src="assets/images/queens.jpg">
 
@@ -354,7 +375,7 @@ That made it a million times more special. Forever proud to be on that journey w
 
 </div>
 
-<div class="memory">
+<div class="memory reveal">
 
 <img src="assets/images/tattoo.jpg">
 
@@ -373,7 +394,7 @@ Forever inked together. 🌻🤍
 
 </div>
 
-<div class="memory reverse">
+<div class="memory reverse reveal">
 
 <img src="assets/images/grow.jpg">
 
@@ -393,7 +414,7 @@ Still the same friendship 🥹❤️
 
 </div>
 
-<div class="memory">
+<div class="memory reveal">
 
 <img src="assets/images/japan.jpg">
 
@@ -412,5 +433,32 @@ May you and Minato always love each other deeply. 🤍
 </div>
 
 <footer>© Since Kindergarten • Kambal Tuko 🦋✨🌻</footer>
+<script>
+
+const reveals = document.querySelectorAll(".reveal");
+
+function reveal(){
+
+    reveals.forEach((item)=>{
+
+        const top = item.getBoundingClientRect().top;
+
+        const trigger = window.innerHeight - 120;
+
+        if(top < trigger){
+
+            item.classList.add("active");
+
+        }
+
+    });
+
+}
+
+window.addEventListener("scroll", reveal);
+
+reveal();
+
+</script>
 </body>
 </html>
